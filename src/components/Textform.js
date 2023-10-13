@@ -16,12 +16,17 @@ const Textform = (props) => {
         setText(newtext)
         props.showalert("converted to lower case","success");
     }
+     const removeWhite = () => {
+    updateText(text.replaceAll(/\s+/g, ""));
+    props.showAlert(" Removed All Whitespaces", "success");
+   };
     const copy=()=>{
       let cpy=document.getElementById("textarea");
       cpy.select();
       navigator.clipboard.writeText(cpy.value);
       props.showalert("copied to clipboard","success");
     }
+    
     const clr=()=>{
       let data=document.getElementById("textarea");
         setText(" ");
@@ -39,6 +44,7 @@ const Textform = (props) => {
 </div>
 <button disabled={text.length==0} type="button" class="btn btn-primary  my-2" onClick={handleUp}>convert to uppercase</button>
 <button disabled={text.length==0}type="button" class="btn btn-primary  my-1 mx-2" onClick={handleLow}>convert to Lowercase</button>
+    <button disabled={text.length==0}type="button" class="btn btn-primary  my-1 mx-2" onClick={removeWhite}>Remove WhiteSpace</button>
 <button disabled={text.length==0}type="button" class="btn btn-primary  my-1 mx-2" onClick={copy}>copy text</button>
 <button disabled={text.length==0}type="button" class="btn btn-primary  my-1 mx-2" onClick={clr}>clear</button>
 
