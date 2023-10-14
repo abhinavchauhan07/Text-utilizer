@@ -17,7 +17,7 @@ const Textform = (props) => {
         props.showalert("converted to lower case","success");
     }
      const removeWhite = () => {
-    updateText(text.replaceAll(/\s+/g, ""));
+    setText(text.replaceAll(/\s+/g, ""));
     props.showAlert(" Removed All Whitespaces", "success");
    };
     const copy=()=>{
