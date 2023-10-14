@@ -32,7 +32,7 @@ setAlert(null);
   }
   return (
     <div>
-      <Navbar title="TextKaro" about="About TextKaro" mode={Mode} togglemode={toggleMode}></Navbar>
+      <Navbar title="TextEdito" about="About TextEdito" mode={Mode} togglemode={toggleMode}></Navbar>
       <div className="container my-3">
         <Alert alert={alert }></Alert>
       <Textform heading="enter ur text" mode={Mode} showalert={showAlert}></Textform>
